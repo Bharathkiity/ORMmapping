@@ -1,0 +1,41 @@
+//
+//public class ReverseNumber {
+//
+//	public static void main(String[] args) {
+//		
+//		
+//		int n = 987, reverse = 0, lastDigit; 
+//		while(n>0)
+//		{
+//		lastDigit= n % 10;
+//		reverse= reverse *10+ lastDigit;
+//		n = n/10;
+//		}
+//		System.out.println(reverse);
+//
+//	}
+//
+//}
+public class ReverseNumber {
+
+    
+    public static int reverseDigits(int num) {
+        int reverse = 0;
+        int lastDigit;
+        
+        while (num!=0) {
+            //lastDigit = num % 10;
+            reverse = reverse * 10 + num%10;
+            num = num / 10;
+        }
+        
+        return reverse;
+    }
+
+    public static void main(String[] args) {
+        int number = 1234;
+        int reversedNumber =ReverseNumber.reverseDigits(number);  // Call the reverseDigits method
+        System.out.println(reversedNumber);
+    }
+}
+

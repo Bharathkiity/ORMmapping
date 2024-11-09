@@ -1,0 +1,45 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class UpdateEmployee {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+	
+		String driver,url,username,password;
+		driver="com.mysql.cj.jdbc.Driver";
+		url="jdbc:mysql://localhost:3306/edb12634";
+		username="root";
+		password="root";
+		
+		String UpdateQuery="update employee set name=? where id=?";
+		Scanner sc=new Scanner(System.in);
+		System.out.println("please enter name:");
+		String name=sc.next();
+		System.out.println("please enter id:");
+		int id=sc.nextInt();
+		
+		Connection con=DriverManager.getConnection(url,username,password);
+
+		
+		PreparedStatement st=con.prepareStatement(UpdateQuery);
+		
+		st.setInt(1, id);
+
+		st.setString(2,name);
+		
+		int status=st.executeUpdate();
+		if(status>=1) {
+			System.out.println("value updated ");
+		}else {
+			System.out.println("not updated");
+		}
+
+	
+		st.close();
+		con.close();
+}
+}

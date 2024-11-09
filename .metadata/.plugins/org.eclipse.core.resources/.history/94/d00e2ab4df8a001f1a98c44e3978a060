@@ -1,0 +1,9 @@
+
+public class CheckedExceptionDemo {
+	public static void main(String[] args) throws InterruptedException {
+		System.out.println("hi......");
+		Thread.sleep(1000);
+		System.out.println("java...");
+		Thread.sleep(2000);
+	}
+}

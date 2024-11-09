@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Operator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	    int a,b,c;
+		Scanner sc=new Scanner(System.in); //user inputt
+		System.out.println("enter first num");
+		a=sc.nextInt();//read
+		System.out.println("enter second number");
+		b=sc.nextInt();//read
+		System.out.println("enter third  number");
+		c=sc.nextInt();//read
+		int x=a > b;
+		int y=a > c ? a : c;
+		int z=b > c ? b : c;
+		int max = (x?y:z);
+		
+		
+		System.out.println(max);
+	}
+
+}

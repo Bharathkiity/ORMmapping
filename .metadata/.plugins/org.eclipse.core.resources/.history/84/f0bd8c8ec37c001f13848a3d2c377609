@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class ConditionalOperator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x,y,max,min;
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter first num");
+		System.out.println("enter second number");
+		x=100;
+		y=200;
+		max=(x>y)?x:y;
+		min=(x>y)?x:y;
+		System.out.println(max);
+		System.out.println(min);
+	}
+
+}

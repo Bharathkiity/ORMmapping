@@ -1,0 +1,7 @@
+
+public class CountCharacters {
+	public static void main() {
+		String str="bharath @kumar";
+		System.out.println(str.length());
+	}
+}

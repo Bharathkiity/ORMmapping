@@ -1,0 +1,47 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class InsertMultipleRows {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        String driver, url, username, password;
+        driver = "com.mysql.cj.jdbc.Driver";
+        url = "jdbc:mysql://localhost:3306/edb12634";
+        username = "root";
+        password = "root";
+
+        String InsertQuery = "INSERT INTO employee (id, name, salary) VALUES (?, ?, ?)";
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Please enter id:");
+        int id = sc.nextInt();
+        
+        System.out.println("Please enter name:");
+        String name = sc.next();
+        
+        System.out.println("Please enter salary:");
+        double salary = sc.nextDouble();
+        
+        Connection con = DriverManager.getConnection(url, username, password);
+        PreparedStatement st = con.prepareStatement(InsertQuery);
+        
+        // Set parameters in the correct order
+        st.setInt(1, id);         // Set id
+        st.setString(2, name);     // Set name
+        st.setDouble(3, salary);   // Set salary
+        
+        int status = st.executeUpdate();
+        if (status >= 1) {
+            System.out.println("Record inserted successfully.");
+        } else {
+            System.out.println("Insertion failed.");
+        }
+        
+        st.close();
+        con.close();
+        sc.close();
+    }
+}

@@ -1,0 +1,26 @@
+
+public class CheckedExceptionDemo {
+	public void m1() {
+	System.out.println("hi......");
+Thread.sleep(5000);
+System.out.println("java...");
+}
+	public void m2() {
+		m1();
+	}
+	public void m3() {
+		m2();
+	}
+	
+	public static void main(String[] args) throws InterruptedException {
+//		//Thread.sleep(5000);
+//		System.out.println("hi......");
+//		Thread.sleep(5000);
+//		System.out.println("java...");
+//		Thread.sleep(5000);
+//		System.out.println("java...");
+		CheckedExceptionDemo d=new CheckedExceptionDemo();
+		d.m3();
+		
+	}	
+}
