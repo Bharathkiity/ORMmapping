@@ -5,11 +5,8 @@ public class FactorialNumber {
 		long number=100;
 		long factorial=1;
 		for(int i=1;i<=number;i++) {
-			factorial=factorial*i;
-			
+			factorial=factorial*i;	
 		} 
-		System.out.println( factorial);
-	
+		System.out.println(factorial);
 	}
-
 }

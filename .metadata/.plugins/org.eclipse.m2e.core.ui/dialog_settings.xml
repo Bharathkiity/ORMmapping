@@ -25,6 +25,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.edubridge"/>
 			<item value="com.edubridge.myapp"/>
 		</list>
 		<list key="groupId">
